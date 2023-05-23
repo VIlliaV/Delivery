@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshop=self.webpackChunkshop||[]).push([[436],{436:function(n,r,t){t.r(r),t.d(r,{default:function(){return a}});var e,s=t(168),i=t(444).ZP.div(e||(e=(0,s.Z)(["\n  padding: 90px 60px;\n  color: var(--primary);\n  font-family: 'Montserrat', sans-serif;\n  font-style: normal;\n  font-weight: 600;\n"]))),o=t(184),a=function(){return(0,o.jsx)(i,{children:(0,o.jsx)("h1",{children:"ShoppingCart"})})}}}]);
+//# sourceMappingURL=436.4a87cbfc.chunk.js.map
