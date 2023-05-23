@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdelivery=self.webpackChunkdelivery||[]).push([[304],{304:function(n,r,e){e.r(r),e.d(r,{default:function(){return f}});var t,i=e(168),s=e(444).ZP.div(t||(t=(0,i.Z)(["\n  padding: 90px 60px;\n  color: var(--primary);\n  font-family: 'Montserrat', sans-serif;\n  font-style: normal;\n  font-weight: 600;\n"]))),a=e(184),f=function(){return(0,a.jsx)(s,{children:(0,a.jsx)("h1",{children:"Shop"})})}}}]);
+//# sourceMappingURL=304.7a1a8042.chunk.js.map

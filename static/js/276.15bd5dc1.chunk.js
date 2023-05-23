@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkshop=self.webpackChunkshop||[]).push([[276],{276:function(n,p,u){u.r(p),u.d(p,{default:function(){return c}});var e,r=u(168),s=u(444).ZP.div(e||(e=(0,r.Z)(["\n  padding: 110px 50px 110px;\n"]))),t=u(184),c=function(){return(0,t.jsx)(s,{children:"shopping cart"})}}}]);
-//# sourceMappingURL=276.15bd5dc1.chunk.js.map
