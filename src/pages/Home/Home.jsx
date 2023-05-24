@@ -1,11 +1,7 @@
 import { Container } from './Home.styled';
 
 const Home = () => {
-  return (
-    <Container>
-      <h1>Shop</h1>
-    </Container>
-  );
+  return <Container>HOME</Container>;
 };
 
 export default Home;

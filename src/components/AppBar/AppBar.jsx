@@ -5,7 +5,7 @@ export const AppBar = () => {
     <Container>
       <ul className="list">
         <li>
-          <NavStyle to="/">Shop</NavStyle>
+          <NavStyle to="shop">Shop</NavStyle>
         </li>
         <li>
           <NavStyle to="cart">Shopping Cart</NavStyle>

@@ -1,7 +1,7 @@
 import { Container } from './ShoppingCart.styled';
 
 const ShoppingCart = () => {
-  return <Container>shopping cart</Container>;
+  return <Container>Shopping cart</Container>;
 };
 
 export default ShoppingCart;
