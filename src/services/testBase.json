@@ -1,0 +1,158 @@
+[
+  {
+    "name": "Mac-Mac",
+    "menu": [
+      {
+        "id": "mac_1",
+        "dish": "dish 1",
+        "foodImg": "https://source.unsplash.com/320x240/?food",
+        "price": "80"
+      },
+      {
+        "id": "mac_2",
+        "dish": "dish 2",
+        "foodImg": "https://source.unsplash.com/320x240/?food",
+        "price": "100"
+      },
+      {
+        "id": "mac_3",
+        "dish": "dish 3",
+        "foodImg": "https://source.unsplash.com/320x240/?food",
+        "price": "120"
+      },
+      {
+        "id": "mac_4",
+        "dish": "dish 4",
+        "foodImg": "https://source.unsplash.com/320x240/?food",
+        "price": "150"
+      },
+      {
+        "id": "mac_5",
+        "dish": "dish 5",
+        "foodImg": "https://source.unsplash.com/320x240/?food",
+        "price": "10"
+      }
+    ],
+    "id": "1"
+  },
+  {
+    "name": "FKC",
+    "menu": [
+      {
+        "id": "FKC_1",
+        "dish": "dish 1",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "80"
+      },
+      {
+        "id": "FKC_2",
+        "dish": "dish 2",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "100"
+      },
+      {
+        "id": "FKC_3",
+        "dish": "dish 3",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "120"
+      }
+    ],
+    "id": "2"
+  },
+  {
+    "name": "chinaNoM",
+    "menu": [
+      {
+        "id": "chinaNoM_1",
+        "dish": "dish 1",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "80"
+      },
+      {
+        "id": "chinaNoM_2",
+        "dish": "dish 2",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "100"
+      },
+      {
+        "id": "chinaNoM_3",
+        "dish": "dish 3",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "120"
+      }
+    ],
+    "id": "3"
+  },
+  {
+    "name": "italianFood",
+    "menu": [
+      {
+        "id": "italianFood_1",
+        "dish": "dish 1",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "80"
+      },
+      {
+        "id": "italianFood_2",
+        "dish": "dish 2",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "100"
+      },
+      {
+        "id": "italianFood_3",
+        "dish": "dish 3",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "120"
+      }
+    ],
+    "id": "4"
+  },
+  {
+    "name": "Ukarain-Best",
+    "menu": [
+      {
+        "id": "Ukarain-Best_1",
+        "dish": "dish 1",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "80"
+      },
+      {
+        "id": "Ukarain-Best_2",
+        "dish": "dish 2",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "100"
+      },
+      {
+        "id": "Ukarain-Best_3",
+        "dish": "dish 3",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "120"
+      }
+    ],
+    "id": "5"
+  },
+  {
+    "name": "Sugar Eat",
+    "menu": [
+      {
+        "id": "Sugar Eat_1",
+        "dish": "dish 1",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "80"
+      },
+      {
+        "id": "Sugar Eat_2",
+        "dish": "dish 2",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "100"
+      },
+      {
+        "id": "Sugar Eat_3",
+        "dish": "dish 3",
+        "foodImg": "https://loremflickr.com/640/480/food",
+        "price": "120"
+      }
+    ],
+    "id": "6"
+  }
+]

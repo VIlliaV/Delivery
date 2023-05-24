@@ -6,7 +6,6 @@ const Shop = () => {
   return (
     <Container>
       <SideMenu />
-      <h1>Shop</h1>
       <Menu />
     </Container>
   );

@@ -9,7 +9,7 @@ export const ButtonStyled = styled.button`
   height: 50px;
   padding: 14px 28px;
   gap: 6px;
-  margin-top: 20px;
+
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -20,8 +20,11 @@ export const ButtonStyled = styled.button`
   border: none;
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
-  &[data-isfollow='true'] {
+  &[data-is-add='true'] {
     background: var(--active);
+  }
+  &[data-visible='false'] {
+    display: none;
   }
   cursor: pointer;
   :hover {

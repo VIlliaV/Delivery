@@ -2,7 +2,7 @@
   --primary: rgb(55, 55, 55);
   --second: rgb(235, 216, 255);
   --shadow: rgb(235, 216, 255, 0.5);
-  --back_primary: rgba(87, 54, 163, 1);
+  --back_primary: rgb(87, 54, 163);
   --active: rgb(92, 211, 168);
 }
 
