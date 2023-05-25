@@ -26,6 +26,14 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
     if (rerender) rerender();
   };
 
+  const handleChange = e => {
+    const input = e.target.value;
+    const regex = /^\d+$/;
+    if (input === '' || regex.test(input)) {
+      setPriceCount(+input);
+    }
+  };
+
   const {
     styleCart: { flexDirectionCart, widthImg, widthDiv } = {
       flexDirectionCart: 'column',
@@ -49,11 +57,7 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
         <p className="dish"> {dish} </p>
         <p className="price">{price} грн</p>
         <div data-visible={visible}>
-          <input
-            value={priceCount}
-            onChange={e => setPriceCount(+e.target.value)}
-            pattern="\d+"
-          />
+          <input value={priceCount} onChange={handleChange} />
           <button onClick={() => setPriceCount(priceCount + 1)}>+</button>
           <button
             onClick={() => setPriceCount(priceCount - 1)}
