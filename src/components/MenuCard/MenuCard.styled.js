@@ -6,11 +6,11 @@ export const Card = styled.li`
   flex-direction: column;
   align-items: center;
   /* position: relative; */
-  width: 380px;
+  width: 300px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 24px;
   text-transform: uppercase;
   color: var(--second);
@@ -24,22 +24,32 @@ export const Card = styled.li`
   border-radius: 20px;
 
   & .food_images img {
-    width: 380px;
-    height: 285px;
+    width: 300px;
+    height: 225px;
     object-fit: cover;
     /* border-radius: 50%; */
     background-color: var(--back_primary);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+  }
+
+  & .food_data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 8px;
   }
   & .dish {
     /* margin-top: 20px; */
-    margin-bottom: 16px;
+    /* margin-bottom: 8px; */
   }
   & .price {
     /* margin-top: 20px; */
-    margin-bottom: 16px;
+    font-size: 12px;
+    /* margin-bottom: 8px; */
   }
-
+  & [data-visible='false'] {
+    display: none;
+  }
   & button {
     /* margin-top: 26px; */
     margin-bottom: 36px;

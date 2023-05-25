@@ -5,15 +5,15 @@ export const ButtonStyled = styled.button`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 196px;
-  height: 50px;
-  padding: 14px 28px;
+  width: 160px;
+  height: 40px;
+  padding: 10px 20px;
   gap: 6px;
 
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 22px;
   color: var(--primary);
   background: var(--second);

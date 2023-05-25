@@ -3,9 +3,9 @@ import { Card } from './MenuCard.styled';
 import { changeLocalAdd, getLocalAdd } from 'services/Local/local';
 import { useEffect, useState } from 'react';
 
-const MenuCard = ({ menuItem, visibleButton }) => {
+const MenuCard = ({ menuItem, visible, ...other }) => {
   const [add, setAdd] = useState(false);
-
+  const [priceCount, setPriceCount] = useState(1);
   const { id, dish, foodImg, price } = menuItem;
 
   useEffect(() => {
@@ -22,23 +22,60 @@ const MenuCard = ({ menuItem, visibleButton }) => {
     } else {
       changeLocalAdd(getLocalAdd().filter(obj => obj.menuItem.id !== id));
     }
-    //   rerender();
+    const { rerender } = other;
+    if (rerender) rerender();
   };
+
+  const {
+    styleCart: { flexDirectionCart, widthImg, widthDiv } = {
+      flexDirectionCart: 'column',
+      widthImg: '300',
+      widthDiv: '300',
+    },
+  } = other;
+
   return (
-    <Card>
+    <Card style={{ flexDirection: flexDirectionCart }}>
       <div className="food_images">
-        <img src={foodImg || foodImg} alt={dish} width={380} height={285} />
+        <img
+          src={foodImg || foodImg}
+          alt={dish}
+          width={300}
+          height={225}
+          style={{ width: widthImg, height: widthImg / 1.4 }}
+        />
       </div>
-      <p className="dish"> {dish} </p>
-      <p className="price">{price} грн</p>
-      <Button
-        type="button"
-        onClick={handleAdd}
-        data-is-add={add}
-        data-visible={visibleButton}
-      >
-        {add ? 'added' : 'add to Cart'}
-      </Button>
+      <div className="food_data">
+        <p className="dish"> {dish} </p>
+        <p className="price">{price} грн</p>
+        <div data-visible={visible}>
+          <input
+            value={priceCount}
+            onChange={e => setPriceCount(+e.target.value)}
+            pattern="\d+"
+          />
+          <button onClick={() => setPriceCount(priceCount + 1)}>+</button>
+          <button
+            onClick={() => setPriceCount(priceCount - 1)}
+            disabled={!priceCount}
+          >
+            -
+          </button>
+        </div>
+        <Button
+          style={{
+            width: widthDiv / 1.87,
+            height: widthDiv / 7.5,
+            // padding: widthImg / 30,
+          }}
+          type="button"
+          onClick={handleAdd}
+          data-is-add={add}
+          // data-visible={visibleButton}
+        >
+          {add ? 'remove' : 'add to Cart'}
+        </Button>
+      </div>
     </Card>
   );
 };

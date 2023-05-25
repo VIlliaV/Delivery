@@ -53,7 +53,12 @@ const Menu = () => {
         <>
           <ul>
             {menu.map(menuItem => (
-              <MenuCard key={menuItem.id} menuItem={menuItem} menuId={menuId} />
+              <MenuCard
+                key={menuItem.id}
+                menuItem={menuItem}
+                menuId={menuId}
+                visible="false"
+              />
             ))}
           </ul>
         </>
