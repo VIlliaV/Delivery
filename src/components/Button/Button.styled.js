@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ButtonStyled = styled.button`
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -26,8 +27,12 @@ export const ButtonStyled = styled.button`
   &[data-visible='false'] {
     display: none;
   }
+
   cursor: pointer;
   :hover {
     background: var(--shadow);
+  }
+  :disabled {
+    display: none;
   }
 `;

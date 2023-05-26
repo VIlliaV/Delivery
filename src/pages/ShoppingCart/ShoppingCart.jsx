@@ -10,6 +10,7 @@ import User from 'components/User/User';
 import Button from 'components/Button/Button';
 import { putUserData } from 'services/API';
 import noOrder from 'images/noOrder.jpg';
+import { fetchUserData } from 'services/API/APIUsers';
 
 const ShoppingCart = () => {
   const [order, setOrder] = useState([]);
@@ -30,9 +31,14 @@ const ShoppingCart = () => {
     setTotal(prevState => prevState + itemCoast);
   };
 
-  const onSubmit = user => {
+  const onSubmit = async user => {
     user.menu = order;
-    putUserData(user);
+    const data = await fetchUserData();
+    const isUserAdded = data.find(item => item.email === user.email);
+    if (isUserAdded) {
+      console.log('вже додано :>> ', isUserAdded.id);
+    } else putUserData(user);
+
     setTotal(0);
     setOrder([]);
     changeLocalAdd([]);
@@ -70,7 +76,7 @@ const ShoppingCart = () => {
 
           <div className="shop_total">
             <p>Total: {total} грн</p>
-            <Button type="submit" form="user-form">
+            <Button type="submit" form="user-form" disabled={!total}>
               SUBMIT
             </Button>
           </div>

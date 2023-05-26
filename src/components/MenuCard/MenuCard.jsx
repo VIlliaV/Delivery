@@ -104,6 +104,11 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
           type="button"
           onClick={handleAdd}
           data-is-add={add}
+          title={
+            add
+              ? 'The product will be removed from the Shopping Cart'
+              : 'The item should be added in the Shopping Cart'
+          }
         >
           {add ? 'remove' : 'add to Cart'}
         </Button>
