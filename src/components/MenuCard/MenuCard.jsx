@@ -1,27 +1,67 @@
 import Button from 'components/Button/Button';
 import { Card } from './MenuCard.styled';
-import { changeLocalAdd, getLocalAdd } from 'services/Local/local';
+import {
+  changeLocalAdd,
+  changeLocalCompany,
+  getLocalAdd,
+} from 'services/Local/local';
 import { useEffect, useState } from 'react';
 
 const MenuCard = ({ menuItem, visible, ...other }) => {
   const [add, setAdd] = useState(false);
-  const [priceCount, setPriceCount] = useState(1);
+  const [priceCount, setPriceCount] = useState(0);
+  const [totalItem, setTotalItem] = useState(0);
   const { id, dish, foodImg, price } = menuItem;
 
-  useEffect(() => {
-    if (!getLocalAdd()) changeLocalAdd([]);
-    const isAdded = getLocalAdd()?.some(obj => obj.menuItem.id === id);
+  const {
+    companyId,
+    changeTotal = () => {},
+    menuId,
+    styleCart: { flexDirectionCart, widthImg, widthDiv } = {
+      flexDirectionCart: 'column',
+      widthImg: '300',
+      widthDiv: '300',
+    },
+  } = other;
 
-    isAdded ? setAdd(true) : setAdd(false);
-  }, [id]);
+  useEffect(() => {
+    const local = getLocalAdd();
+
+    if (!local) {
+      changeLocalAdd([]);
+    } else if (!local.length) {
+      changeLocalCompany(0);
+      companyId(0);
+    }
+    const isAdded = getLocalAdd()?.some(obj => obj.menuItem.id === id);
+    if (isAdded) {
+      setAdd(true);
+      setPriceCount(1);
+    } else setAdd(false);
+  }, [id, menuId, add]);
+
+  useEffect(() => {
+    setTotalItem(priceCount * +price);
+  }, [price, priceCount]);
+
+  useEffect(() => {
+    const priceTotalItem = priceCount * +price;
+    changeTotal(priceTotalItem - totalItem);
+  }, [changeTotal, price, priceCount, totalItem]);
 
   const handleAdd = () => {
-    setAdd(!add);
     if (add === false) {
       changeLocalAdd([...getLocalAdd(), { menuItem, isAdded: true }]);
+      if (menuId) {
+        companyId(menuId);
+        changeLocalCompany(menuId);
+      }
     } else {
+      const priceTotalItem = priceCount * +price;
+      changeTotal(-priceTotalItem);
       changeLocalAdd(getLocalAdd().filter(obj => obj.menuItem.id !== id));
     }
+    setAdd(!add);
     const { rerender } = other;
     if (rerender) rerender();
   };
@@ -33,14 +73,6 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
       setPriceCount(+input);
     }
   };
-
-  const {
-    styleCart: { flexDirectionCart, widthImg, widthDiv } = {
-      flexDirectionCart: 'column',
-      widthImg: '300',
-      widthDiv: '300',
-    },
-  } = other;
 
   return (
     <Card style={{ flexDirection: flexDirectionCart }}>
@@ -56,16 +88,15 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
       <div className="food_data">
         <p className="dish"> {dish} </p>
         <p className="price">{price} грн</p>
-        <div data-visible={visible}>
-          <input value={priceCount} onChange={handleChange} />
-          <button onClick={() => setPriceCount(priceCount + 1)}>+</button>
-          <button
-            onClick={() => setPriceCount(priceCount - 1)}
-            disabled={!priceCount}
-          >
-            -
-          </button>
-        </div>
+        {/* <div data-visible={visible}> */}
+        <input
+          className="input_quantity"
+          data-visible={visible}
+          type="number"
+          value={priceCount}
+          onChange={handleChange}
+        />
+
         <Button
           style={{
             width: widthDiv / 1.87,
@@ -75,7 +106,6 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
           type="button"
           onClick={handleAdd}
           data-is-add={add}
-          // data-visible={visibleButton}
         >
           {add ? 'remove' : 'add to Cart'}
         </Button>

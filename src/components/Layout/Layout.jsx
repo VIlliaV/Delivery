@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import { Container } from './Layout.styled';
 // import { Footer } from 'components/Footer/Footer';
 import { AppBar } from 'components/AppBar/AppBar';
+import { Footer } from 'components/Footer/Footer';
 
 export const Layout = () => {
   return (
@@ -14,7 +15,7 @@ export const Layout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   );
 };

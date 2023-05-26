@@ -8,7 +8,7 @@ import { fetchMenu, fetchPhoto } from 'services/API';
 
 // import { fetchMenu, fetchPhoto } from 'services/API/APIFood';
 
-const Menu = () => {
+const Menu = ({ companyId }) => {
   const [pending, setPending] = useState(true);
   const [menu, setMenu] = useState([]);
   const { menuId } = useParams();
@@ -19,7 +19,7 @@ const Menu = () => {
 
     fetchMenu(menuId)
       .then(response => {
-        console.log('🚀 ~ response:', response);
+        // console.log('🚀 ~ response:', response);
         const { menu } = response;
         if (!menu.length) throw new Error('there is no menu for this company');
         fetchPhoto(menuId, menu.length)
@@ -44,7 +44,6 @@ const Menu = () => {
       .finally(setPending(false));
   }, [menuId]);
 
-  console.log('menu :>> ', pending);
   return (
     <Container>
       {pending && menuId ? (
@@ -58,6 +57,7 @@ const Menu = () => {
                 menuItem={menuItem}
                 menuId={menuId}
                 visible="false"
+                companyId={companyId}
               />
             ))}
           </ul>

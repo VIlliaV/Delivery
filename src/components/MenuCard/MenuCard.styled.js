@@ -36,6 +36,7 @@ export const Card = styled.li`
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 4px;
     padding: 8px 8px;
   }
   & .dish {
@@ -50,8 +51,17 @@ export const Card = styled.li`
   & [data-visible='false'] {
     display: none;
   }
+
+  & .input_quantity {
+    width: 40%;
+    border: none;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
   & button {
-    /* margin-top: 26px; */
+    margin-top: 10px;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
     margin-bottom: 36px;
   }
 `;

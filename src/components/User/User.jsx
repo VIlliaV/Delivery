@@ -1,17 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Container } from './User.styled';
 
-const User = () => {
+const User = ({ onSubmit }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
+  // console.log('name, phone :>> ', name, phone);
+
+  // useEffect(() => {
+  //   if (onSubmit) handleSubmit();
+  // }, [onSubmit]);
 
   const handleSubmit = e => {
     e.preventDefault();
-
-    // Виконати логіку обробки введених даних (наприклад, відправка на сервер)
-
-    // Очистити поля форми
+    const user = { name, phone, email, address };
+    onSubmit(user);
     setName('');
     setPhone('');
     setEmail('');
@@ -19,49 +23,53 @@ const User = () => {
   };
 
   return (
-    <div>
-      <form>
+    <Container>
+      <form id="user-form" onSubmit={handleSubmit}>
         <label>
-          Name:
+          <span> Name:</span>
           <input
             type="text"
+            placeholder="Bill Mac Donald"
             value={name}
             onChange={e => setName(e.target.value)}
+            required
           />
         </label>
         <br />
         <label>
-          Phone:
+          <span> Phone:</span>
           <input
-            type="text"
+            type="tel"
+            placeholder="067673232"
             value={phone}
             onChange={e => setPhone(e.target.value)}
+            required
           />
         </label>
         <br />
         <label>
-          Email:
+          <span> Email:</span>
           <input
-            type="text"
+            type="email"
             value={email}
+            placeholder="delivery@testy.com"
             onChange={e => setEmail(e.target.value)}
+            required
           />
         </label>
         <br />
         <label>
-          Address:
+          <span> Address:</span>
           <input
             type="text"
             value={address}
+            placeholder="London"
             onChange={e => setAddress(e.target.value)}
           />
         </label>
         <br />
       </form>
-      <button type="button" onClick={handleSubmit}>
-        Submit
-      </button>
-    </div>
+    </Container>
   );
 };
 

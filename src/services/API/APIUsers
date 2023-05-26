@@ -1,9 +1,0 @@
-import axios from 'axios';
-
-export const putUserData = async () => {
-  const { data } = await axios.post('users/name', 'user');
-
-  // console.log('🚀 ~ data:', data);
-
-  return data;
-};

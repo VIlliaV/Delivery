@@ -32,4 +32,14 @@ export const NavStyle = styled(NavLink)`
     border: 1px solid var(--second);
     border-radius: 5px;
   }
+  &[data-stop='true'] {
+    &.active {
+      cursor: not-allowed;
+      padding: 10px;
+      color: var(--primary);
+      background-color: var(--second);
+      border: 1px solid var(--primary);
+      border-radius: 5px;
+    }
+  }
 `;
