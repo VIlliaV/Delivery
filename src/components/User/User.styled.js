@@ -27,9 +27,6 @@ export const Container = styled.div`
       border: 1px solid black;
       box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
-      ::placeholder {
-        /* padding-left: 10px; */
-      }
     }
   }
 `;

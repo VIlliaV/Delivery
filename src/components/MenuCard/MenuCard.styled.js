@@ -2,10 +2,8 @@ import styled from 'styled-components';
 
 export const Card = styled.li`
   display: flex;
-  /* padding-top: 28px; */
   flex-direction: column;
   align-items: center;
-  /* position: relative; */
   width: 300px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -27,7 +25,6 @@ export const Card = styled.li`
     width: 300px;
     height: 225px;
     object-fit: cover;
-    /* border-radius: 50%; */
     background-color: var(--back_primary);
     margin-bottom: 8px;
   }
@@ -40,13 +37,9 @@ export const Card = styled.li`
     padding: 8px 8px;
   }
   & .dish {
-    /* margin-top: 20px; */
-    /* margin-bottom: 8px; */
   }
   & .price {
-    /* margin-top: 20px; */
     font-size: 12px;
-    /* margin-bottom: 8px; */
   }
   & [data-visible='false'] {
     display: none;

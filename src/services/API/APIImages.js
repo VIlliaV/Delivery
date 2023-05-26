@@ -11,8 +11,6 @@ export const fetchPhoto = (start, quantity) => {
     per_page: quantity,
     orientation: 'landscape',
   });
-  //   .then(photos => {
-  //   console.log('🚀 ~ photos:', photos.photos);
-  // });
+
   return data;
 };

@@ -10,6 +10,12 @@ export const Container = styled.div`
       flex: 1 0 70%;
       max-height: 60vh;
     }
+
+    & .noOrder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     & ul {
       width: 100%;
       display: flex;

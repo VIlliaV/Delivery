@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Container } from './User.styled';
 
 const User = ({ onSubmit }) => {
@@ -6,11 +6,6 @@ const User = ({ onSubmit }) => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
-  // console.log('name, phone :>> ', name, phone);
-
-  // useEffect(() => {
-  //   if (onSubmit) handleSubmit();
-  // }, [onSubmit]);
 
   const handleSubmit = e => {
     e.preventDefault();

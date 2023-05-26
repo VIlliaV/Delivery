@@ -3,10 +3,10 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 import { lazy } from 'react';
 import Menu from 'components/Menu/Menu';
-import Shop from 'pages/Shop/Shop';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const ShoppingCart = lazy(() => import('pages/ShoppingCart/ShoppingCart'));
+const Shop = lazy(() => import('pages/Shop/Shop'));
 
 const App = () => {
   return (

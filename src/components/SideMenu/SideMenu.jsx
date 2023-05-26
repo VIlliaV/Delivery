@@ -1,10 +1,12 @@
-import { Aside, NavStyle } from './SideMenu.styled';
 import { useEffect, useRef, useState } from 'react';
-import { Loader } from 'components/Loader/Loader';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+
 import { fetchFoodCompany } from 'services/API';
 import { getLocalCompany } from 'services/Local/local';
-import { Navigate, useNavigate } from 'react-router-dom';
+
+import { Loader } from 'components/Loader/Loader';
+import { Aside, NavStyle } from './SideMenu.styled';
 
 const SideMenu = ({ idMenu }) => {
   const [pending, setPending] = useState(false);
@@ -12,6 +14,7 @@ const SideMenu = ({ idMenu }) => {
   const [noRoute, setNoRoute] = useState(0);
   const navigate = useNavigate();
   const firstRender = useRef(true);
+
   useEffect(() => {
     setNoRoute(idMenu);
   }, [idMenu]);
@@ -31,14 +34,11 @@ const SideMenu = ({ idMenu }) => {
         toast.error(`${error.message}`);
       })
       .finally(() => {
-        console.log('done');
-
         setPending(false);
         navigate(`/shop/${getLocalCompany() || ''}`);
-        // setNoRoute(idMenu);
       });
-  }, []);
-  console.log('noRoute :>> ', noRoute);
+  }, [navigate]);
+
   return (
     <Aside>
       {pending ? (

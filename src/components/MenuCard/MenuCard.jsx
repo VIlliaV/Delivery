@@ -1,11 +1,11 @@
 import Button from 'components/Button/Button';
 import { Card } from './MenuCard.styled';
+import { useEffect, useState } from 'react';
 import {
   changeLocalAdd,
   changeLocalCompany,
   getLocalAdd,
 } from 'services/Local/local';
-import { useEffect, useState } from 'react';
 
 const MenuCard = ({ menuItem, visible, ...other }) => {
   const [add, setAdd] = useState(false);
@@ -38,7 +38,7 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
       setAdd(true);
       setPriceCount(1);
     } else setAdd(false);
-  }, [id, menuId, add]);
+  }, [id, menuId, add, companyId]);
 
   useEffect(() => {
     setTotalItem(priceCount * +price);
@@ -88,7 +88,6 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
       <div className="food_data">
         <p className="dish"> {dish} </p>
         <p className="price">{price} грн</p>
-        {/* <div data-visible={visible}> */}
         <input
           className="input_quantity"
           data-visible={visible}
@@ -101,7 +100,6 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
           style={{
             width: widthDiv / 1.87,
             height: widthDiv / 7.5,
-            // padding: widthImg / 30,
           }}
           type="button"
           onClick={handleAdd}

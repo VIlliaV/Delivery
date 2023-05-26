@@ -1,25 +1,24 @@
 import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
+
+import { fetchMenu, fetchPhoto } from 'services/API';
+
 import { Container } from './Menu.styled';
 import { Loader } from 'components/Loader/Loader';
 import MenuCard from 'components/MenuCard/MenuCard';
-import { useEffect, useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { fetchMenu, fetchPhoto } from 'services/API';
-
-// import { fetchMenu, fetchPhoto } from 'services/API/APIFood';
+import noOrder from 'images/noOrder.jpg';
 
 const Menu = ({ companyId }) => {
   const [pending, setPending] = useState(true);
   const [menu, setMenu] = useState([]);
   const { menuId } = useParams('');
-  // console.log('🚀 ~ menuId:', menuId);
 
   useEffect(() => {
     if (!menuId) return;
 
     fetchMenu(menuId)
       .then(response => {
-        // console.log('🚀 ~ response:', response);
         const { menu } = response;
         if (!menu.length) throw new Error('there is no menu for this company');
         fetchPhoto(menuId, menu.length)
@@ -46,8 +45,23 @@ const Menu = ({ companyId }) => {
 
   return (
     <Container>
-      {pending && menuId ? (
-        <Loader />
+      {pending ? (
+        <>
+          {menuId ? (
+            <Loader />
+          ) : (
+            <>
+              <h2>Take you choice</h2>
+              <img
+                className="noOrder"
+                src={noOrder}
+                alt="no order"
+                width="600"
+                height="600"
+              />
+            </>
+          )}
+        </>
       ) : (
         <>
           <ul>
