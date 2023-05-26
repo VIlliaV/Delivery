@@ -35,7 +35,7 @@ const ShoppingCart = () => {
     setTotal(0);
     setOrder([]);
     changeLocalAdd([]);
-    changeLocalCompany(0);
+    changeLocalCompany('');
   };
 
   return (

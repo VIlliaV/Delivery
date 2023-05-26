@@ -11,7 +11,7 @@ import { fetchMenu, fetchPhoto } from 'services/API';
 const Menu = ({ companyId }) => {
   const [pending, setPending] = useState(true);
   const [menu, setMenu] = useState([]);
-  const { menuId } = useParams();
+  const { menuId } = useParams('');
   // console.log('🚀 ~ menuId:', menuId);
 
   useEffect(() => {

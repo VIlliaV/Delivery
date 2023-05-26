@@ -30,8 +30,8 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
     if (!local) {
       changeLocalAdd([]);
     } else if (!local.length) {
-      changeLocalCompany(0);
-      companyId(0);
+      changeLocalCompany('');
+      companyId('');
     }
     const isAdded = getLocalAdd()?.some(obj => obj.menuItem.id === id);
     if (isAdded) {

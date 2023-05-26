@@ -4,12 +4,13 @@ import { Loader } from 'components/Loader/Loader';
 import { toast } from 'react-hot-toast';
 import { fetchFoodCompany } from 'services/API';
 import { getLocalCompany } from 'services/Local/local';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const SideMenu = ({ idMenu }) => {
   const [pending, setPending] = useState(false);
   const [companies, setCompanies] = useState([]);
   const [noRoute, setNoRoute] = useState(0);
-
+  const navigate = useNavigate();
   const firstRender = useRef(true);
   useEffect(() => {
     setNoRoute(idMenu);
@@ -33,6 +34,7 @@ const SideMenu = ({ idMenu }) => {
         console.log('done');
 
         setPending(false);
+        navigate(`/shop/${getLocalCompany() || ''}`);
         // setNoRoute(idMenu);
       });
   }, []);
