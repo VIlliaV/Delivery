@@ -10,6 +10,9 @@ export const AppBar = () => {
         <li>
           <NavStyle to="cart">Shopping Cart</NavStyle>
         </li>
+        <li>
+          <NavStyle to="history">History</NavStyle>
+        </li>
       </ul>
     </Container>
   );

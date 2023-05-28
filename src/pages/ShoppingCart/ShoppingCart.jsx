@@ -10,11 +10,16 @@ import User from 'components/User/User';
 import Button from 'components/Button/Button';
 import { putUserData } from 'services/API';
 import noOrder from 'images/noOrder.jpg';
-import { fetchUserData } from 'services/API/APIUsers';
+import {
+  fetchUserData,
+  fetchUserDataByID,
+  putUserDataByID,
+} from 'services/API/APIUsers';
 import { toast } from 'react-hot-toast';
 
 const ShoppingCart = () => {
   const [order, setOrder] = useState([]);
+  console.log('🚀 ~ order:', order);
   const [total, setTotal] = useState(0);
 
   const rerenderPageForFilter = () => {
@@ -33,12 +38,19 @@ const ShoppingCart = () => {
   };
 
   const onSubmit = async user => {
-    user.menu = order;
+    const menuUser = { id: new Date().toISOString(), order, totalPrice: total };
     const data = await fetchUserData();
     const isUserAdded = data.find(item => item.email === user.email);
     if (isUserAdded) {
+      const { menu } = await fetchUserDataByID(isUserAdded.id);
+      user.menu = menu;
+
+      user.menu.push(menuUser);
+
+      putUserDataByID(isUserAdded.id, user);
       toast.success(`дякуємо за ще одне замовлення  ${isUserAdded.name}`);
     } else {
+      user.menu = [menuUser];
       putUserData(user);
       toast.success(`вітаємо з першим замовленням  ${user.name}`);
     }

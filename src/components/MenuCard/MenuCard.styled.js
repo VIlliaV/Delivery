@@ -5,6 +5,7 @@ export const Card = styled.li`
   flex-direction: column;
   align-items: center;
   width: 300px;
+  min-height: 167px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -37,6 +38,7 @@ export const Card = styled.li`
     padding: 8px 8px;
   }
   & .dish {
+    text-align: center;
   }
   & .price {
     font-size: 12px;

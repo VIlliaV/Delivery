@@ -7,6 +7,7 @@ import Menu from 'components/Menu/Menu';
 const Home = lazy(() => import('pages/Home/Home'));
 const ShoppingCart = lazy(() => import('pages/ShoppingCart/ShoppingCart'));
 const Shop = lazy(() => import('pages/Shop/Shop'));
+const History = lazy(() => import('pages/History/History'));
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path=":menuId" element={<Menu />} />
         </Route>
         <Route path="cart" element={<ShoppingCart />} />
+        <Route path="history" element={<History />} />
       </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

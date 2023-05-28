@@ -14,6 +14,7 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
   const { id, dish, foodImg, price } = menuItem;
 
   const {
+    vivsibleForHistory = true,
     companyId,
     changeTotal = () => {},
     menuId,
@@ -86,7 +87,15 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
         />
       </div>
       <div className="food_data">
-        <p className="dish"> {dish} </p>
+        <p
+          className="dish"
+          style={{
+            minWidth: widthDiv / 1.87,
+          }}
+        >
+          {' '}
+          {dish}{' '}
+        </p>
         <p className="price">{price} грн</p>
         <input
           className="input_quantity"
@@ -101,6 +110,7 @@ const MenuCard = ({ menuItem, visible, ...other }) => {
             width: widthDiv / 1.87,
             height: widthDiv / 7.5,
           }}
+          data-visible={vivsibleForHistory}
           type="button"
           onClick={handleAdd}
           data-is-add={add}

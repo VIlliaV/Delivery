@@ -19,12 +19,12 @@ export const Container = styled.div`
     & ul {
       width: 100%;
       display: flex;
-
+      max-height: 60vh;
+      overflow: auto;
       justify-content: center;
       flex-wrap: wrap;
       gap: 35px;
       padding: 10px;
-      /* max-width: 1600px; */
 
       overflow: auto;
       border: 1px solid var(--second);
