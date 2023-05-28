@@ -1,10 +1,11 @@
 [
   {
     "name": "Mac-Mac",
+    "map": { "lat": 49.8497, "lng": 24.0297 },
     "menu": [
       {
         "id": "mac_1",
-        "dish": "dish 1",
+        "dish": "super testy better",
         "foodImg": "https://source.unsplash.com/320x240/?food",
         "price": "80"
       },
@@ -37,6 +38,7 @@
   },
   {
     "name": "FKC",
+    "map": { "lat": 49.8397, "lng": 24.0697 },
     "menu": [
       {
         "id": "FKC_1",
@@ -61,6 +63,7 @@
   },
   {
     "name": "chinaNoM",
+    "map": { "lat": 49.8307, "lng": 24.0677 },
     "menu": [
       {
         "id": "chinaNoM_1",
@@ -85,6 +88,7 @@
   },
   {
     "name": "italianFood",
+    "map": { "lat": 49.7307, "lng": 24.0657 },
     "menu": [
       {
         "id": "italianFood_1",
@@ -133,6 +137,7 @@
   },
   {
     "name": "Sugar Eat",
+    "map": { "lat": 49.8327, "lng": 24.1277 },
     "menu": [
       {
         "id": "Sugar Eat_1",

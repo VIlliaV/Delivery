@@ -11,6 +11,7 @@ import Button from 'components/Button/Button';
 import { putUserData } from 'services/API';
 import noOrder from 'images/noOrder.jpg';
 import { fetchUserData } from 'services/API/APIUsers';
+import { toast } from 'react-hot-toast';
 
 const ShoppingCart = () => {
   const [order, setOrder] = useState([]);
@@ -36,8 +37,11 @@ const ShoppingCart = () => {
     const data = await fetchUserData();
     const isUserAdded = data.find(item => item.email === user.email);
     if (isUserAdded) {
-      console.log('вже додано :>> ', isUserAdded.id);
-    } else putUserData(user);
+      toast.success(`дякуємо за ще одне замовлення  ${isUserAdded.name}`);
+    } else {
+      putUserData(user);
+      toast.success(`вітаємо з першим замовленням  ${user.name}`);
+    }
 
     setTotal(0);
     setOrder([]);

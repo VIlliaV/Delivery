@@ -3,6 +3,16 @@ import styled from 'styled-components';
 export const Container = styled.div`
   flex: 1 0 30%;
   max-width: 30vw;
+
+  & #map {
+    width: 90%;
+    height: 200px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+  }
+
   & label {
     display: flex;
     align-items: center;
